@@ -1,11 +1,14 @@
 <!doctype html>
 <html lang="en">
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#121b29" />
     <meta name="description" content="An interactive classroom experience about belonging, equitable practices, and responding to harm." />
     <title>Brave by Design · Interactive Classroom</title>
+    <!-- Load CSS independently of A-Frame so a 3D loading error cannot strip styling. -->
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <div id="app">
@@ -106,13 +109,32 @@
           <button class="chapter-button" data-open="repair"><span class="chapter-number">03</span><span>REPAIR <small>Accountability &amp; care</small></span><span aria-hidden="true">↗</span></button>
         </nav>
 
+        <!-- SIMULATED CLIMATE: reflection aid, not data about real students. -->
+        <section class="climate-section" aria-labelledby="climate-title">
+          <div class="climate-heading">
+            <div>
+              <p class="climate-eyebrow">A LIVING CLASSROOM CLIMATE</p>
+              <h2 id="climate-title">Every decision shapes the room.</h2>
+            </div>
+            <button type="button" id="climate-reset" class="climate-reset">↺ Reset choices</button>
+          </div>
+          <p class="climate-explainer">Choose how to BUILD, RESPOND and REPAIR. These illustrative indicators change as you explore the potential impact of each decision. They are <strong>not measurements of students or actual safety.</strong></p>
+          <div id="climate-bars" class="climate-bars" aria-label="Simulated climate indicators">
+            <div class="climate-meter" data-metric="belonging"><div class="meter-label"><span>Belonging</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative belonging" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="voice"><div class="meter-label"><span>Student voice</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative student voice" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="trust"><div class="meter-label"><span>Trust &amp; safety</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative trust and safety" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="access"><div class="meter-label"><span>Equitable access</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative equitable access" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+          </div>
+          <p class="climate-status" id="climate-status" role="status" aria-live="polite">No decisions explored yet. Start with BUILD to see how the classroom changes.</p>
+        </section>
+
         <div class="intro" id="intro">
           <div class="intro-card">
             <p class="eyebrow">INTERACTIVE LEARNING EXPERIENCE · VERSION 0.1</p>
             <h1>Brave spaces<br /><em>don't happen by accident.</em></h1>
             <p class="intro-description">Explore the decisions teachers make to build belonging, respond to hate, and repair harm. This is an early playable prototype—not a finished course project.</p>
             <div class="intro-actions"><button class="primary-button" id="begin-button">Enter the classroom <span aria-hidden="true">→</span></button></div>
-            <p class="small-note">Explore with your mouse or use the chapter buttons. Keyboard navigation is available throughout.</p>
+            <p class="small-note">On a tablet, swipe to explore the 3D room or use the chapter buttons. You can always explore every scenario without navigating in 3D.</p>
           </div>
         </div>
 
