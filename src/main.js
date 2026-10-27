@@ -8,7 +8,7 @@ const STORAGE_KEY = 'bravebydesign-2d-multiroom-v2';
 const $ = (id) => document.getElementById(id);
 const scenarioDialog = $('scenarioDialog');
 const finishDialog = $('finishDialog');
-const SCENE_BASE = import.meta.env?.BASE_URL ?? '/';
+const SCENE_BASE = import.meta.env.BASE_URL;
 let state = loadRun();
 let activeSlotId = null;
 
