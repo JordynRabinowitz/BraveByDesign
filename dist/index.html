@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <script src="https://aframe.io/releases/1.8.0/aframe.min.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#121b29" />
+    <meta name="description" content="An interactive classroom experience about belonging, equitable practices, and responding to harm." />
+    <title>Brave by Design · Interactive Classroom</title>
+    <!-- Load CSS independently of A-Frame so a 3D loading error cannot strip styling. -->
+    <script type="module" crossorigin src="./assets/index-BZpNQwZe.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-K5w8NNB5.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="masthead">
+        <a class="brand" href="#home" aria-label="Brave by Design home">
+          <span class="brand-mark" aria-hidden="true">✳</span>
+          <span>BRAVE <span class="brand-by">BY</span> DESIGN</span>
+        </a>
+        <span class="header-note">AN INTERACTIVE CLASSROOM EXPERIENCE</span>
+        <button type="button" class="text-button" id="about-button">About the project <span aria-hidden="true">↗</span></button>
+      </header>
+
+      <main>
+        <section class="world" aria-label="Interactive classroom scene">
+          <a-scene
+            id="classroom-scene"
+            embedded
+            renderer="antialias: true; colorManagement: true"
+            background="color: #DDE5EA"
+            vr-mode-ui="enabled: false"
+            device-orientation-permission-ui="enabled: false"
+          >
+            <a-entity light="type: ambient; intensity: 0.88; color: #ffffff"></a-entity>
+            <a-entity light="type: directional; intensity: 0.95; castShadow: false" position="-2 8 4"></a-entity>
+            <a-sky color="#dbe6e8"></a-sky>
+            <!-- The classroom uses simple geometry so that assets can be swapped in later. -->
+            <a-plane rotation="-90 0 0" position="0 0 -1.25" width="12" height="12" color="#dbcebc"></a-plane>
+            <a-plane position="0 3 -6.1" width="12" height="6" color="#f5eee6"></a-plane>
+            <a-plane position="-6 3 -1" rotation="0 90 0" width="11" height="6" color="#d8d7cc"></a-plane>
+            <a-plane position="6 3 -1" rotation="0 -90 0" width="11" height="6" color="#d8d7cc"></a-plane>
+            <a-box position="0 0.08 -6.04" depth="0.10" height="0.16" width="12" color="#ad978b"></a-box>
+            <a-box position="0 2.55 -6" depth="0.15" height="2.35" width="4.5" color="#e8c795"></a-box>
+            <a-box position="0 2.55 -5.91" depth="0.04" height="2.05" width="4.2" color="#3d6463"></a-box>
+            <!-- Decor: shelves and books -->
+            <a-box position="-4.6 1.25 -5.65" width="1.4" height="2.5" depth="0.65" color="#a47d61"></a-box>
+            <a-box position="-4.6 1.3 -5.25" width="1.28" height="0.10" depth="0.55" color="#e9d4b3"></a-box>
+            <a-box position="-4.6 1.9 -5.25" width="1.28" height="0.10" depth="0.55" color="#e9d4b3"></a-box>
+            <a-box position="-4.98 1.53 -5.22" width="0.17" height="0.35" depth="0.22" color="#a8bcca"></a-box>
+            <a-box position="-4.74 1.53 -5.22" width="0.17" height="0.35" depth="0.22" color="#c88477"></a-box>
+            <a-box position="-4.49 1.53 -5.22" width="0.17" height="0.35" depth="0.22" color="#eac478"></a-box>
+            <a-box position="-4.21 1.53 -5.22" width="0.17" height="0.35" depth="0.22" color="#9db8a6"></a-box>
+            <!-- Door to the hallway -->
+            <a-box position="4.4 1.38 -6.01" width="1.35" height="2.76" depth="0.12" color="#b28270"></a-box>
+            <a-box position="4.4 1.36 -5.93" width="1.17" height="2.55" depth="0.05" color="#d3b59b"></a-box>
+            <a-sphere position="4.82 1.35 -5.84" radius="0.08" color="#bb8652"></a-sphere>
+            <!-- Window -->
+            <a-box position="5.9 2.7 -1.5" rotation="0 90 0" width="3.6" height="1.9" depth="0.10" color="#c9c2a7"></a-box>
+            <a-box position="5.82 2.7 -1.5" rotation="0 90 0" width="3.4" height="1.7" depth="0.10" color="#b4d8d8"></a-box>
+            <a-box position="5.72 2.7 -1.5" rotation="0 90 0" width="0.08" height="1.7" depth="0.08" color="#f2ebe1"></a-box>
+            <!-- Desk group A -->
+            <a-box position="-2 0.92 -2.6" width="2.4" height="0.13" depth="1.45" color="#c48f66"></a-box>
+            <a-box position="-2.96 0.47 -3.11" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="-1.04 0.47 -3.11" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="-2.96 0.47 -2.06" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="-1.04 0.47 -2.06" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="-2.83 0.37 -1.40" width="0.62" height="0.13" depth="0.59" color="#9caeb4"></a-box>
+            <a-box position="-1.27 0.37 -1.40" width="0.62" height="0.13" depth="0.59" color="#9caeb4"></a-box>
+            <!-- Desk group B -->
+            <a-box position="1.8 0.92 -2.6" width="2.45" height="0.13" depth="1.45" color="#c48f66"></a-box>
+            <a-box position="0.85 0.47 -3.12" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="2.75 0.47 -3.12" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="0.85 0.47 -2.05" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="2.75 0.47 -2.05" width="0.12" height="0.88" depth="0.12" color="#8f6758"></a-box>
+            <a-box position="1.15 0.37 -1.42" width="0.62" height="0.13" depth="0.59" color="#a7b3a5"></a-box>
+            <a-box position="2.5 0.37 -1.42" width="0.62" height="0.13" depth="0.59" color="#a7b3a5"></a-box>
+            <!-- Books and a plant -->
+            <a-box position="-2.45 1.05 -2.65" width="0.48" height="0.06" depth="0.65" color="#e6d8b1"></a-box>
+            <a-box position="-2.45 1.08 -2.65" width="0.48" height="0.02" depth="0.65" color="#809c9e"></a-box>
+            <a-cylinder position="4.55 0.25 -3.9" radius="0.27" height="0.5" color="#bd8e7d"></a-cylinder>
+            <a-cone position="4.55 0.85 -3.9" radius-bottom="0.48" radius-top="0.06" height="1.05" color="#54806f"></a-cone>
+            <!-- Hotspots, each with visible glow and invisible larger interaction target -->
+            <a-entity position="-2 1.4 -2.4">
+              <a-sphere radius="0.25" color="#f4da89" material="emissive: #d59b3f; emissiveIntensity: 0.35" animation="property: position; to: 0 0.16 0; dir: alternate; dur: 1700; easing: easeInOutSine; loop: true"></a-sphere>
+              <a-sphere class="hotspot" data-station="build" radius="0.6" material="opacity: 0; transparent: true" aria-label="Explore building belonging"></a-sphere>
+            </a-entity>
+            <a-entity position="4.3 1.9 -5.1">
+              <a-sphere radius="0.25" color="#da9b8c" material="emissive: #b65e4f; emissiveIntensity: 0.35" animation="property: position; to: 0 0.16 0; dir: alternate; dur: 1800; easing: easeInOutSine; loop: true"></a-sphere>
+              <a-sphere class="hotspot" data-station="respond" radius="0.65" material="opacity: 0; transparent: true" aria-label="Explore responding to harm"></a-sphere>
+            </a-entity>
+            <a-entity position="1.6 1.65 -5.7">
+              <a-sphere radius="0.25" color="#accbbc" material="emissive: #6a9684; emissiveIntensity: 0.35" animation="property: position; to: 0 0.16 0; dir: alternate; dur: 1900; easing: easeInOutSine; loop: true"></a-sphere>
+              <a-sphere class="hotspot" data-station="repair" radius="0.65" material="opacity: 0; transparent: true" aria-label="Explore repairing harm"></a-sphere>
+            </a-entity>
+            <a-entity id="player" position="0 1.65 4.5">
+              <a-camera wasd-controls="acceleration: 26" look-controls="pointerLockEnabled: false">
+                <a-cursor rayOrigin="mouse" raycaster="objects: .hotspot; far: 15" fuse="false" opacity="0"></a-cursor>
+              </a-camera>
+            </a-entity>
+          </a-scene>
+
+          <div class="world-label"><span class="world-dot"></span> CLASSROOM 01 <span class="world-divider">/</span> A PLACE TO PRACTICE</div>
+          <div class="world-help">Select a glowing object or choose a chapter below.</div>
+        </section>
+
+        <nav class="chapter-nav" aria-label="Explore classroom chapters">
+          <button class="chapter-button" data-open="build"><span class="chapter-number">01</span><span>BUILD <small>Belonging &amp; voice</small></span><span aria-hidden="true">↗</span></button>
+          <button class="chapter-button" data-open="respond"><span class="chapter-number">02</span><span>RESPOND <small>Confronting harm</small></span><span aria-hidden="true">↗</span></button>
+          <button class="chapter-button" data-open="repair"><span class="chapter-number">03</span><span>REPAIR <small>Accountability &amp; care</small></span><span aria-hidden="true">↗</span></button>
+        </nav>
+
+        <!-- SIMULATED CLIMATE: reflection aid, not data about real students. -->
+        <section class="climate-section" aria-labelledby="climate-title">
+          <div class="climate-heading">
+            <div>
+              <p class="climate-eyebrow">A LIVING CLASSROOM CLIMATE</p>
+              <h2 id="climate-title">Every decision shapes the room.</h2>
+            </div>
+            <button type="button" id="climate-reset" class="climate-reset">↺ Reset choices</button>
+          </div>
+          <p class="climate-explainer">Choose how to BUILD, RESPOND and REPAIR. These illustrative indicators change as you explore the potential impact of each decision. They are <strong>not measurements of students or actual safety.</strong></p>
+          <div id="climate-bars" class="climate-bars" aria-label="Simulated climate indicators">
+            <div class="climate-meter" data-metric="belonging"><div class="meter-label"><span>Belonging</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative belonging" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="voice"><div class="meter-label"><span>Student voice</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative student voice" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="trust"><div class="meter-label"><span>Trust &amp; safety</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative trust and safety" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+            <div class="climate-meter" data-metric="access"><div class="meter-label"><span>Equitable access</span><output>50</output></div><div class="meter-track" role="progressbar" aria-label="Illustrative equitable access" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span class="meter-fill"></span></div></div>
+          </div>
+          <p class="climate-status" id="climate-status" role="status" aria-live="polite">No decisions explored yet. Start with BUILD to see how the classroom changes.</p>
+        </section>
+
+        <div class="intro" id="intro">
+          <div class="intro-card">
+            <p class="eyebrow">INTERACTIVE LEARNING EXPERIENCE · VERSION 0.1</p>
+            <h1>Brave spaces<br /><em>don't happen by accident.</em></h1>
+            <p class="intro-description">Explore the decisions teachers make to build belonging, respond to hate, and repair harm. This is an early playable prototype—not a finished course project.</p>
+            <div class="intro-actions"><button class="primary-button" id="begin-button">Enter the classroom <span aria-hidden="true">→</span></button></div>
+            <p class="small-note">On a tablet, swipe to explore the 3D room or use the chapter buttons. You can always explore every scenario without navigating in 3D.</p>
+          </div>
+        </div>
+
+        <aside id="scenario-panel" class="scenario-panel" role="dialog" aria-modal="true" aria-labelledby="scenario-title" hidden>
+          <div class="panel-header">
+            <span class="eyebrow" id="scenario-category">01 · BUILD</span>
+            <button type="button" class="icon-button" id="close-panel" aria-label="Close scenario">×</button>
+          </div>
+          <div class="panel-scroll">
+            <h2 id="scenario-title"></h2>
+            <p id="scenario-story" class="panel-story"></p>
+            <div id="scenario-options" class="options"></div>
+            <div id="scenario-feedback" class="feedback" aria-live="polite" hidden></div>
+            <div id="scenario-research" class="research"></div>
+            <button id="panel-done" type="button" class="primary-button panel-done">Return to classroom <span aria-hidden="true">↗</span></button>
+          </div>
+        </aside>
+
+        <aside id="about-panel" class="about-panel" role="dialog" aria-modal="true" aria-label="About the project" hidden>
+          <div class="panel-header"><span class="eyebrow">ABOUT THIS PROTOTYPE</span><button type="button" class="icon-button" id="close-about" aria-label="Close about panel">×</button></div>
+          <h2>Brave by Design</h2>
+          <p>How do educators intentionally build brave, inclusive classrooms—and respond when that safety is threatened?</p>
+          <p>Three chapters explore proactive design, response to hate, and responsible repair. The finished project should connect each choice to actual EDUC 347 readings and guest lectures.</p>
+          <p><strong>Important:</strong> All scenarios are fictional examples. A later version can add content warnings, accessibility options, audio, and an APA references page. Do not use this prototype as a substitute for school incident-response procedures.</p>
+          <button type="button" id="reset-button" class="secondary-button">Reset completed chapters</button>
+        </aside>
+
+        <div class="scrim" id="scrim" hidden></div>
+      </main>
+      <footer class="footer"><span>BUILD <span class="footer-star">✳</span> RESPOND <span class="footer-star">✳</span> REPAIR</span><span>PROTOTYPE · COURSE CONTENT &amp; SOURCES TO BE ADDED</span></footer>
+    </div>
+  </body>
+</html>
