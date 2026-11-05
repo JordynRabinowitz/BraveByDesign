@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">A warm illustrated school hallway</title><desc id="desc">A school corridor with a classroom door, lockers, restroom entrance, and library door.</desc>
+<defs>
+  <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e3e9f2"/><stop offset="1" stop-color="#d9e5e8"/></linearGradient>
+  <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#e4d4c9"/><stop offset="1" stop-color="#bfaead"/></linearGradient>
+  <linearGradient id="door" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b0a2ca"/><stop offset="1" stop-color="#7d6b9b"/></linearGradient>
+  <filter id="shade"><feGaussianBlur stdDeviation="9"/></filter>
+</defs>
+<rect width="1200" height="720" fill="url(#wall)"/>
+<path d="M0 477H1200V720H0Z" fill="url(#floor)"/>
+<path d="M0 474H1200" stroke="#b1b2bc" stroke-width="13"/>
+<path d="M0 598H1200M0 678H1200M200 477L18 720M420 477L328 720M610 477L620 720M820 477L954 720M1010 477L1165 720" stroke="#efebe2" opacity=".48" stroke-width="4"/>
+<!-- overhead ceiling lights -->
+<path d="M255 0V44M611 0V44M941 0V44" stroke="#b4bbc5" stroke-width="6"/>
+<rect x="186" y="42" width="138" height="20" rx="10" fill="#fff3d3"/><rect x="542" y="42" width="138" height="20" rx="10" fill="#fff3d3"/><rect x="872" y="42" width="138" height="20" rx="10" fill="#fff3d3"/>
+<!-- classroom door -->
+<rect x="47" y="142" width="206" height="379" rx="12" fill="#b5adb6"/>
+<rect x="59" y="153" width="179" height="365" rx="6" fill="url(#door)" stroke="#8d7ca7" stroke-width="5"/>
+<rect x="87" y="194" width="126" height="118" rx="7" fill="#cbd9e2" stroke="#e8e4f0" stroke-width="9"/>
+<path d="M150 200V303M94 253H208" stroke="#eef2f0" stroke-width="7"/>
+<rect x="73" y="160" width="149" height="29" rx="5" fill="#fff9ed"/><text x="148" y="180" text-anchor="middle" font-size="17" font-weight="bold" fill="#6a5b81" font-family="Arial,sans-serif">CLASSROOM</text>
+<circle cx="215" cy="368" r="9" fill="#f4d4a1" stroke="#be9b71" stroke-width="3"/>
+<!-- lockers -->
+<rect x="298" y="189" width="272" height="303" rx="8" fill="#95b0bc" stroke="#6f919f" stroke-width="7"/>
+<g fill="#aac6cd" stroke="#7597a2" stroke-width="4">
+ <rect x="308" y="197" width="82" height="288" rx="6"/><rect x="390" y="197" width="84" height="288" rx="6"/><rect x="474" y="197" width="86" height="288" rx="6"/>
+</g>
+<g stroke="#7396a3" stroke-width="4" stroke-linecap="round">
+<path d="M326 236H373M326 247H373M326 258H373M408 236H455M408 247H455M408 258H455M493 236H542M493 247H542M493 258H542"/>
+<path d="M326 441H373M326 451H373M408 441H455M408 451H455M493 441H542M493 451H542"/>
+</g>
+<g fill="#eef4f1"><rect x="368" y="323" width="7" height="35" rx="3"/><rect x="454" y="323" width="7" height="35" rx="3"/><rect x="538" y="323" width="7" height="35" rx="3"/></g>
+<rect x="315" y="274" width="60" height="36" rx="4" fill="#fff2ca" transform="rotate(-6 315 274)"/><text x="344" y="296" font-family="Arial,sans-serif" font-size="12" fill="#82758b" text-anchor="middle">NOTICE</text>
+<!-- restroom door -->
+<rect x="622" y="146" width="215" height="378" rx="12" fill="#b3a6a4"/>
+<rect x="636" y="158" width="187" height="361" rx="5" fill="#e4baab" stroke="#c99487" stroke-width="7"/>
+<rect x="658" y="169" width="141" height="55" rx="8" fill="#fff7ed"/>
+<text x="729" y="202" text-anchor="middle" font-size="21" font-weight="bold" fill="#966a70" font-family="Arial,sans-serif">RESTROOM</text>
+<path d="M659 245H799V457H659Z" fill="#f0d0c4" stroke="#dfaa9f" stroke-width="5"/>
+<circle cx="794" cy="354" r="9" fill="#e7c28d" stroke="#b78f65" stroke-width="3"/>
+<!-- quiet green corner + school poster -->
+<rect x="857" y="184" width="63" height="151" rx="8" fill="#f6f1d9" stroke="#b9bdc8" stroke-width="7"/>
+<text x="890" y="212" font-family="Arial,sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#758f89">SEE</text>
+<text x="890" y="229" font-family="Arial,sans-serif" font-size="11" text-anchor="middle" font-weight="bold" fill="#758f89">SOMETHING</text>
+<text x="890" y="262" font-family="Arial,sans-serif" font-size="10" text-anchor="middle" fill="#8a8196">SAY</text>
+<text x="890" y="278" font-family="Arial,sans-serif" font-size="10" text-anchor="middle" fill="#8a8196">SOMETHING</text>
+<path d="M871 299L883 313L909 287" fill="none" stroke="#7ba596" stroke-width="5"/>
+<!-- library door -->
+<rect x="946" y="143" width="203" height="380" rx="11" fill="#a3a3a0"/>
+<rect x="958" y="155" width="180" height="364" rx="5" fill="#9aaea0" stroke="#7f9c92" stroke-width="5"/>
+<rect x="979" y="190" width="138" height="213" rx="7" fill="#dfeadf" stroke="#eef5e8" stroke-width="8"/>
+<path d="M1048 193V398M985 293H1111" stroke="#f9fff4" stroke-width="8"/>
+<rect x="971" y="164" width="153" height="29" rx="5" fill="#fff8ec"/><text x="1049" y="184" font-family="Arial,sans-serif" font-weight="bold" font-size="17" fill="#56746d" text-anchor="middle">LIBRARY</text>
+<circle cx="1111" cy="433" r="10" fill="#f5d4a0" stroke="#ae8d68" stroke-width="3"/>
+<!-- bench and planter -->
+<ellipse cx="356" cy="552" rx="165" ry="24" fill="#70646b" opacity=".14" filter="url(#shade)"/>
+<path d="M278 545V623M430 545V623" stroke="#867e85" stroke-width="13"/>
+<rect x="240" y="524" width="225" height="29" rx="9" fill="#be9682"/><path d="M248 527H457" stroke="#f4cfac" stroke-width="7"/>
+<path d="M860 502H928L918 561H872Z" fill="#b78678"/>
+<path d="M890 511Q835 472 850 426Q875 441 889 496Q895 441 922 419Q945 468 900 501Q945 453 961 470Q949 504 899 507" fill="#6eaa94"/>
+</svg>

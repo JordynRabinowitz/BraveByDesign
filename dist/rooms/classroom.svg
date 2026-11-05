@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+<title id="title">A warm illustrated classroom</title><desc id="desc">A classroom wall with windows, a whiteboard, bulletin board, hallway door, and desks arranged for collaborative learning.</desc>
+<defs>
+  <linearGradient id="wall" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#F8EAE5"/><stop offset="1" stop-color="#EDDBDB"/></linearGradient>
+  <linearGradient id="floor" x1="0" x2=".7" y1="0" y2="1"><stop stop-color="#DCC4BE"/><stop offset="1" stop-color="#BE9F9F"/></linearGradient>
+  <linearGradient id="window" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#BCE2EA"/><stop offset="1" stop-color="#EFF5DF"/></linearGradient>
+  <linearGradient id="desk" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#F5C59C"/><stop offset="1" stop-color="#D99878"/></linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="8"/></filter>
+</defs>
+<!-- wall and floor -->
+<rect width="1200" height="720" fill="url(#wall)"/>
+<path d="M0 465H1200V720H0Z" fill="url(#floor)"/>
+<path d="M0 466H1200" stroke="#AB8589" stroke-width="12"/>
+<g stroke="#CDAFB0" stroke-width="2" opacity=".38"><path d="M0 560H1200M0 660H1200M180 465L45 720M525 465L475 720M810 465L890 720M1050 465L1190 720"/></g>
+<!-- left window -->
+<rect x="61" y="95" width="254" height="283" rx="13" fill="#DEC0B6"/>
+<rect x="75" y="109" width="226" height="257" rx="6" fill="url(#window)" stroke="#FFF9ED" stroke-width="12"/>
+<path d="M188 116V358M83 235H294" stroke="#FFF9ED" stroke-width="12"/>
+<path d="M92 317Q128 273 166 305T252 300L294 316V359H90Z" fill="#A7C7B3" opacity=".8"/>
+<path d="M86 343Q136 300 189 334T292 315V356H86Z" fill="#7BAE9F" opacity=".65"/>
+<rect x="60" y="367" width="254" height="15" rx="5" fill="#FBF7E9"/>
+<!-- ceiling lamp -->
+<path d="M583 0V43" stroke="#9E8597" stroke-width="6"/>
+<path d="M507 44H659L674 86H491Z" fill="#9C849D"/>
+<path d="M514 86Q582 132 652 86" fill="#FFEBD0" opacity=".45"/>
+<!-- whiteboard -->
+<rect x="358" y="156" width="402" height="267" rx="14" fill="#B9A3AD"/>
+<rect x="373" y="171" width="372" height="231" rx="7" fill="#FFFDF4" stroke="#CFC5BE" stroke-width="4"/>
+<text x="559" y="216" text-anchor="middle" fill="#8B79A3" font-size="25" font-family="Arial,sans-serif" font-weight="bold">WE ALL BELONG</text>
+<path d="M429 242H688" stroke="#D7CBE0" stroke-width="3" stroke-linecap="round"/>
+<text x="419" y="288" fill="#A39AAB" font-size="16" font-family="Arial,sans-serif">Be curious.</text>
+<text x="419" y="320" fill="#A39AAB" font-size="16" font-family="Arial,sans-serif">Be kind.</text>
+<text x="419" y="352" fill="#A39AAB" font-size="16" font-family="Arial,sans-serif">Speak up for others.</text>
+<path d="M372 405H746" stroke="#B39DA7" stroke-width="11" stroke-linecap="round"/>
+<rect x="409" y="402" width="48" height="5" rx="2" fill="#AC8BD0"/><rect x="470" y="402" width="48" height="5" rx="2" fill="#80B5AC"/>
+<!-- bulletin board -->
+<rect x="785" y="163" width="155" height="241" rx="10" fill="#B89C88"/>
+<rect x="796" y="174" width="133" height="218" rx="4" fill="#D7B1A0" stroke="#E4D3BB" stroke-width="5"/>
+<rect x="812" y="193" width="65" height="66" rx="4" transform="rotate(-5 812 193)" fill="#F9E6B6"/>
+<text x="844" y="219" text-anchor="middle" fill="#6A657B" font-size="12" font-family="Arial,sans-serif">YOU</text><text x="844" y="235" text-anchor="middle" fill="#6A657B" font-size="12" font-family="Arial,sans-serif">MATTER</text>
+<rect x="862" y="262" width="51" height="65" rx="3" transform="rotate(8 862 262)" fill="#D5E8C9"/>
+<rect x="812" y="304" width="51" height="64" rx="3" transform="rotate(-3 812 304)" fill="#F3D6E9"/>
+<path d="M873 344l15-14 12 12 15-22" fill="none" stroke="#82A595" stroke-width="5"/>
+<circle cx="843" cy="194" r="4" fill="#AD7B88"/><circle cx="886" cy="259" r="4" fill="#AD7B88"/><circle cx="821" cy="305" r="4" fill="#AD7B88"/>
+<!-- hallway door -->
+<rect x="976" y="117" width="182" height="385" rx="11" fill="#B88E92"/>
+<rect x="989" y="127" width="156" height="370" rx="5" fill="#A78AAB" stroke="#8A6D91" stroke-width="5"/>
+<path d="M1009 169H1125V456H1009Z" fill="#B49DB8" stroke="#C9B4C5" stroke-width="5"/>
+<rect x="1027" y="185" width="80" height="30" rx="5" fill="#F9EEE4"/>
+<text x="1067" y="205" text-anchor="middle" fill="#826884" font-size="17" font-family="Arial,sans-serif" font-weight="bold">HALL</text>
+<circle cx="1117" cy="339" r="9" fill="#F4D399" stroke="#A87D5F" stroke-width="4"/>
+<!-- bookshelf / plants -->
+<path d="M0 430H1200" stroke="#D4B7B4" stroke-width="5"/>
+<rect x="66" y="415" width="198" height="13" rx="4" fill="#AC918C"/>
+<path d="M89 415V382H116V415M125 415V372H151V415M158 415V386H181V415" fill="#A4A2C6"/>
+<path d="M208 414l-15-23 26-8 17 31" fill="#E4B78A"/>
+<rect x="236" y="385" width="22" height="30" rx="3" fill="#C78D77"/>
+<path d="M248 384Q212 355 237 342Q245 367 250 378Q257 343 277 353Q269 378 252 382" fill="#749F80"/>
+<!-- rug -->
+<ellipse cx="577" cy="605" rx="435" ry="103" fill="#9D7E95" opacity=".24"/>
+<ellipse cx="570" cy="603" rx="408" ry="85" fill="#E6CFD9" opacity=".65"/>
+<!-- desks at back -->
+<ellipse cx="365" cy="496" rx="126" ry="24" fill="#6A5152" opacity=".18" filter="url(#shadow)"/>
+<path d="M277 461L274 549M466 462L474 548" stroke="#937C7C" stroke-width="12" stroke-linecap="round"/>
+<path d="M251 459L308 415H449L495 459L467 485H270Z" fill="url(#desk)" stroke="#BD886C" stroke-width="5"/>
+<path d="M287 453H468" stroke="#FFF0D9" stroke-width="4" opacity=".6"/>
+<rect x="340" y="425" width="62" height="38" rx="4" fill="#FBF2CF" transform="rotate(-7 340 425)"/>
+<path d="M354 439H392M354 448H387" stroke="#C4B99A" stroke-width="2"/>
+<rect x="413" y="426" width="16" height="41" rx="4" fill="#A58AC0" transform="rotate(12 413 426)"/>
+<!-- desk to right -->
+<ellipse cx="814" cy="490" rx="117" ry="23" fill="#6A5152" opacity=".18" filter="url(#shadow)"/>
+<path d="M746 454V539M888 453L905 539" stroke="#937C7C" stroke-width="11" stroke-linecap="round"/>
+<path d="M712 453L759 415H873L924 455L899 477H737Z" fill="url(#desk)" stroke="#BD886C" stroke-width="5"/>
+<path d="M770 441H857" stroke="#F7E8D4" stroke-width="4"/>
+<rect x="776" y="423" width="49" height="34" rx="3" fill="#D6E4DA" transform="rotate(-6 776 423)"/>
+<rect x="852" y="433" width="14" height="27" rx="4" fill="#8DAAB5" transform="rotate(9 852 433)"/>
+<!-- foreground student desk -->
+<ellipse cx="583" cy="666" rx="252" ry="37" fill="#735861" opacity=".22" filter="url(#shadow)"/>
+<path d="M408 590L387 705M783 593L800 705" stroke="#87727E" stroke-width="20" stroke-linecap="round"/>
+<path d="M316 587L400 519H771L852 588L789 640H369Z" fill="url(#desk)" stroke="#C08A70" stroke-width="8"/>
+<path d="M393 574H772" stroke="#FFE7C9" stroke-width="5" opacity=".7"/>
+<path d="M493 543l120-1 12 70-119 6z" fill="#FBF6E7" stroke="#E4D6C6" stroke-width="3"/>
+<path d="M535 561h60M532 577h68M531 592h47" stroke="#CFC8BB" stroke-width="3"/>
+<path d="M667 555l17-3 11 52-17 3z" fill="#A78CCB"/>
+<path d="M448 571l-22-16 19-23 29 16z" fill="#8BC5B8"/>
+<!-- chair -->
+<path d="M220 560h110v22q0 30-55 30t-55-30z" fill="#AAB7C6"/><path d="M235 606l-11 68M309 606l16 68" stroke="#73818D" stroke-width="12"/>
+<!-- plant right corner -->
+<path d="M1105 490h57l-11 79h-36z" fill="#B88474"/><path d="M1132 496Q1068 456 1087 414Q1115 421 1132 484Q1124 407 1148 384Q1175 429 1136 493Q1169 431 1193 454Q1186 478 1136 495" fill="#6F9C7B"/>
+</svg>
