@@ -1,4 +1,5 @@
 import { METRICS, ROOMS, SLOTS, TRAVEL } from './scenarios.js';
+import { RESEARCH, REFERENCES, RUBRIC_MAP } from './research.js';
 import { calculateScores, createRun, getProgress, getRoomProgress, scenarioForSlot, TOTAL_MOMENTS, validateRun } from './game.js';
 
 /** BraveByDesign v2 — three illustrated spaces and one alternate scenario per hotspot.
@@ -8,6 +9,7 @@ const STORAGE_KEY = 'bravebydesign-2d-multiroom-v2';
 const $ = (id) => document.getElementById(id);
 const scenarioDialog = $('scenarioDialog');
 const finishDialog = $('finishDialog');
+const referencesDialog = $('referencesDialog');
 const SCENE_BASE = import.meta.env.BASE_URL;
 let state = loadRun();
 let activeSlotId = null;
@@ -105,8 +107,37 @@ function feedbackMarkup(scenario, answerIndex) {
     const score = choice.impact[m.key];
     return `<span class="impact-pill ${score > 0 ? 'positive' : 'negative'}">${escapeHTML(m.label)} ${score > 0 ? '+' : ''}${score}</span>`;
   }).join('');
-  return `<section class="feedback ${strength ? 'feedback-positive' : ''}" aria-live="polite"><div class="feedback-eyebrow">${strength ? '✦ A STRONG RESPONSE' : '✧ CONSIDER THE IMPACT'}</div><h3>${escapeHTML(choice.heading)}</h3><p>${escapeHTML(choice.feedback)}</p><div class="impact-pills">${impacts}</div><p class="feedback-takeaway"><strong>Takeaway:</strong> ${escapeHTML(choice.takeaway)}</p><div class="feedback-actions"><button class="primary-button" type="button" data-action="close">Continue exploring →</button><span>Try a different response above to compare.</span></div></section>`;
+  return `<section class="feedback ${strength ? 'feedback-positive' : ''}" aria-live="polite"><div class="feedback-eyebrow">${strength ? '✦ A STRONG RESPONSE' : '✧ CONSIDER THE IMPACT'}</div><h3>${escapeHTML(choice.heading)}</h3><p>${escapeHTML(choice.feedback)}</p><div class="impact-pills">${impacts}</div><p class="feedback-takeaway"><strong>Takeaway:</strong> ${escapeHTML(choice.takeaway)}</p>${researchMarkup(scenario.id)}<div class="feedback-actions"><button class="primary-button" type="button" data-action="close">Continue exploring →</button><span>Try a different response above to compare.</span></div></section>`;
 }
+function researchMarkup(scenarioId) {
+  const lens = RESEARCH[scenarioId];
+  if (!lens) return '';
+  const authors = lens.refs.map(id => REFERENCES.find(ref => ref.id === id)?.author ?? id);
+  return `<details class="research-connection">
+    <summary>✧ Why this matters · EDUC 347 connections</summary>
+    <div class="research-body"><p class="research-theme">${escapeHTML(lens.theme)}</p>
+    <p>${escapeHTML(lens.analysis)}</p>
+    <p><strong>What I would change:</strong> ${escapeHTML(lens.change)}</p>
+    <p class="research-sources"><strong>Course readings:</strong> ${authors.map(escapeHTML).join('; ')}</p>
+    <button type="button" class="link-button" data-action="open-references">View APA references →</button></div>
+  </details>`;
+}
+function showReferences() {
+  const regular = REFERENCES.filter(r => !r.ai);
+  const ai = REFERENCES.find(r => r.ai);
+  $('referencesContent').innerHTML = `<div class="modal-top"><span class="mini-eyebrow">EDUC 347 / RESEARCH & DESIGN</span><button type="button" class="icon-close" data-action="references-close" aria-label="Close references">✕</button></div>
+    <h2 id="referencesTitle">The research behind the choices</h2>
+    <p class="references-intro">Each scenario connects a fictional educator decision to course themes. The reflections are original applications, not quotations from the assigned texts. Verify the analyses with the full readings before submitting.</p>
+    <h3>Course themes covered</h3>
+    <ul class="rubric-list">${RUBRIC_MAP.map(([theme, places]) => `<li><strong>${escapeHTML(theme)}</strong><span>${escapeHTML(places)}</span></li>`).join('')}</ul>
+    <h3>References <span class="reference-subtitle">(APA 7 draft)</span></h3>
+    <div class="apa-list">${regular.map(r => `<p>${r.html}</p>`).join('')}</div>
+    <h3>AI Assistance Disclosure</h3>
+    <p class="references-intro">This interactive website was developed with assistance from OpenAI’s ChatGPT for coding, debugging, website design, and integrating interactive game mechanics. I directed the project’s concept, educational focus, design decisions, and revisions. The final project reflects my intended teaching philosophy and approach to creating brave, safe, and inclusive classroom spaces.</p>
+    <div class="apa-list"><p>${ai.html}</p></div>`;
+  if (!referencesDialog.open) referencesDialog.showModal();
+}
+
 function chooseAnswer(originalIndex) {
   const scenario = scenarioForSlot(activeSlotId, state.selections);
   if (!scenario || !Number.isInteger(originalIndex) || !scenario.choices[originalIndex]) return;
@@ -123,7 +154,7 @@ function showFinish() {
     const scenario = scenarioForSlot(slot.id, state.selections);
     return `<p><span>✓</span>${escapeHTML(scenario.choices[state.answers[slot.id]].takeaway)}</p>`;
   }).join('');
-  $('finishContent').innerHTML = `<div class="modal-top"><span class="mini-eyebrow">THE FINAL DOOR</span><button type="button" class="icon-close" data-action="finish-close" aria-label="Close completion screen">✕</button></div><div class="finish-stars" aria-hidden="true">✧ ✳ ✧</div><span class="scenario-badge">ALL SEVEN KEYS COLLECTED</span><h2 id="finishTitle">A braver school is<br /><em>built by choices.</em></h2><p class="finish-intro">You explored seven moments across three spaces. There is no single score that defines an inclusive school. What matters is listening, addressing harm, and following through.</p><div class="finish-summary"><div><strong>${avg}<span>/100</span></strong><small>illustrative climate average</small></div><div><strong>7<span>/7</span></strong><small>moments considered</small></div></div><div class="finish-list"><h3>Ideas to carry into your school</h3>${takeaways}</div><div class="reflection"><strong>Reflection prompt</strong><p>What is one decision you would adapt for your classroom? What can educators do before harm happens to build trust and belonging?</p></div><div class="finish-actions"><button class="primary-button" type="button" data-action="replay">↻ Play again with new situations</button><button class="ghost-button" type="button" data-action="finish-close">Return to the school</button></div>`;
+  $('finishContent').innerHTML = `<div class="modal-top"><span class="mini-eyebrow">THE FINAL DOOR</span><button type="button" class="icon-close" data-action="finish-close" aria-label="Close completion screen">✕</button></div><div class="finish-stars" aria-hidden="true">✧ ✳ ✧</div><span class="scenario-badge">ALL ${TOTAL_MOMENTS} KEYS COLLECTED</span><h2 id="finishTitle">A braver school is<br /><em>built by choices.</em></h2><p class="finish-intro">You explored ${TOTAL_MOMENTS} moments across three spaces. There is no single score that defines an inclusive school. What matters is listening, addressing harm, and following through.</p><div class="finish-summary"><div><strong>${avg}<span>/100</span></strong><small>illustrative climate average</small></div><div><strong>${TOTAL_MOMENTS}<span>/${TOTAL_MOMENTS}</span></strong><small>moments considered</small></div></div><div class="finish-list"><h3>Ideas to carry into your school</h3>${takeaways}</div><div class="reflection"><strong>Reflection prompt</strong><p>What is one decision you would adapt for your classroom? What can educators do before harm happens to build trust and belonging?</p></div><div class="finish-actions"><button class="primary-button" type="button" data-action="replay">↻ Play again with new situations</button><button class="ghost-button" type="button" data-action="finish-close">Return to the school</button><button class="ghost-button" type="button" data-action="open-references">Course references</button></div>`;
   finishDialog.showModal();
 }
 function newRun({ confirm = true } = {}) {
@@ -153,11 +184,17 @@ $('dialogContent').addEventListener('click', e => {
   const answer = e.target.closest('[data-choice]');
   if (answer) { chooseAnswer(Number(answer.dataset.choice)); return; }
   if (e.target.closest('[data-action="close"]')) scenarioDialog.close();
+  if (e.target.closest('[data-action="open-references"]')) showReferences();
 });
 $('finishContent').addEventListener('click', e => {
   if (e.target.closest('[data-action="replay"]')) { newRun({ confirm: false }); return; }
   if (e.target.closest('[data-action="finish-close"]')) finishDialog.close();
+  if (e.target.closest('[data-action="open-references"]')) showReferences();
 });
 $('exitButton').addEventListener('click', showFinish);
+$('referencesButton').addEventListener('click', showReferences);
+$('referencesContent').addEventListener('click', event => {
+  if (event.target.closest('[data-action="references-close"]')) referencesDialog.close();
+});
 $('resetButton').addEventListener('click', () => newRun());
 render();

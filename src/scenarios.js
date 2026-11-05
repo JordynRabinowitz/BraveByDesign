@@ -239,6 +239,69 @@ export const SCENARIOS = [
       { text: 'Insist everyone read the original passage aloud in turn without preparation.', impact: { belonging: -7, voice: -9, safety: -6, access: -14 }, heading: 'One pathway creates avoidable barriers.', feedback: 'Public, unprepared reading can add pressure without helping students access the content.', takeaway: 'Match supports to the objective rather than enforcing a single format.' },
     ],
   },
+  // Additional rubric-focused stations. Each pair shares a core course theme so
+  // every playthrough touches linguistic access, LGBTQIA+ inclusion, and healing.
+  {
+    id: 'math_home_language', title: 'Math reasoning in two languages',
+    situation: 'During a transformations lesson, a student accurately describes how a shape moves in Spanish but has trouble explaining the steps in English. A classmate says they must not understand the math.',
+    question: 'How could you assess the math reasoning while supporting language development?',
+    choices: [
+      { text: 'Invite a diagram or explanation in Spanish, check the reasoning, and scaffold a matching English description with key vocabulary.', impact: { belonging: 11, voice: 12, safety: 4, access: 15 }, heading: 'Separate the math from the language barrier.', feedback: 'This lets the student demonstrate conceptual understanding while explicitly developing English math language. Ask for justification, not just a memorized rule.', takeaway: 'Assess reasoning through multiple language pathways and support precise math vocabulary.' },
+      { text: 'Mark the response wrong until the student can explain everything in English.', impact: { belonging: -9, voice: -12, safety: -4, access: -15 }, heading: 'Language proficiency is not identical to math understanding.', feedback: 'If the objective is transformation reasoning, English-only output may obscure what the student knows. Language development still matters, but it can be scaffolded.', takeaway: 'Do not mistake limited English expression for limited math understanding.' },
+      { text: 'Let the student copy an English explanation from a peer without checking the model or reasoning.', impact: { belonging: -2, voice: -8, safety: 0, access: -10 }, heading: 'Copying is not evidence of conceptual understanding.', feedback: 'Providing the words alone cannot show whether the student understands the movement of the shape. Use visual and oral reasoning checks, then build language.', takeaway: 'Use scaffolds that reveal reasoning rather than concealing it.' },
+    ],
+  },
+  {
+    id: 'math_language_partner', title: 'A group explanation that gets lost',
+    situation: 'A multilingual student uses drawings and everyday language to explain a slope pattern at the table. Their partner dismisses the idea because the student did not use the expected English math terms.',
+    question: 'What could make the discussion more equitable?',
+    choices: [
+      { text: 'Ask the group to interpret the drawing together, validate the reasoning, and connect their words to slope and rate of change.', impact: { belonging: 10, voice: 14, safety: 5, access: 15 }, heading: 'Bridge everyday language and academic math.', feedback: 'Students can reason meaningfully before they have all the formal vocabulary. The teacher can support accurate terms without making English fluency a prerequisite for participation.', takeaway: 'Build formal math vocabulary from the reasoning students already contribute.' },
+      { text: 'Ask the multilingual student to be silent until the English phrasing is correct.', impact: { belonging: -12, voice: -14, safety: -7, access: -12 }, heading: 'Silence removes access to the discussion.', feedback: 'The student is already sharing an idea. Excluding it prevents classmates from examining potentially useful reasoning and offers no useful language support.', takeaway: 'Maintain participation while scaffolding precise language.' },
+      { text: 'Tell the partner to translate everything, then move on without checking the math.', impact: { belonging: -3, voice: -7, safety: -2, access: -8 }, heading: 'Translation is not the whole instructional task.', feedback: 'Peers can help, but the teacher still needs to examine the concept and offer supports so the student can explain it independently over time.', takeaway: 'Check conceptual understanding as well as opportunities for language development.' },
+    ],
+  },
+  {
+    id: 'pronouns', title: 'A student shares their pronouns',
+    situation: 'During a library project, a student quietly tells you they use different pronouns than those some classmates have been using. They are not sure who else knows.',
+    question: 'How could you affirm the student without taking control of their disclosure?',
+    choices: [
+      { text: 'Thank them, ask privately what language they want used in different settings, and make a plan that respects their privacy and school responsibilities.', impact: { belonging: 14, voice: 11, safety: 12, access: 6 }, heading: 'Affirmation includes respecting privacy.', feedback: 'Avoid assuming what is safe to share publicly. Consistent respectful language and a private conversation about the student’s preferences can help create belonging.', takeaway: 'Respect student identity while avoiding unwanted disclosure.' },
+      { text: 'Announce the student’s pronouns to the class so everyone can learn immediately.', impact: { belonging: -8, voice: -11, safety: -15, access: -2 }, heading: 'Do not disclose for someone else.', feedback: 'Even a well-intended public announcement can take away the student’s choice about who knows. Consult relevant school policy when needed.', takeaway: 'Never assume permission to disclose personal identity information.' },
+      { text: 'Ignore the request because the class should focus only on academic content.', impact: { belonging: -13, voice: -10, safety: -7, access: -6 }, heading: 'Respectful identity affirmation is part of the learning environment.', feedback: 'Repeatedly overlooking a student’s expressed preferences can affect whether they feel welcomed and ready to participate.', takeaway: 'Address students with respect instead of separating identity from learning.' },
+    ],
+  },
+  {
+    id: 'inclusive_books', title: 'Whose families are in our stories?',
+    situation: 'A student asks why the featured books and classroom examples never show LGBTQIA+ families. Another student responds that those books would be too controversial.',
+    question: 'How might you keep the library welcoming to students with different family structures?',
+    choices: [
+      { text: 'Review age-appropriate materials with library staff, include a wider range of families, and establish respectful discussion norms.', impact: { belonging: 13, voice: 9, safety: 10, access: 12 }, heading: 'Representation can be intentional and routine.', feedback: 'Students should not need to request basic recognition of their families. Inclusion can be thoughtful, curriculum-connected, and attentive to school requirements.', takeaway: 'Include diverse family structures in ordinary classroom materials.' },
+      { text: 'Remove any books mentioning LGBTQIA+ families so nobody disagrees.', impact: { belonging: -13, voice: -9, safety: -8, access: -13 }, heading: 'Avoiding discomfort can produce exclusion.', feedback: 'A blanket removal makes some students’ everyday realities invisible. Respectful disagreement about ideas is different from marginalizing students.', takeaway: 'Do not make inclusion conditional on complete agreement.' },
+      { text: 'Ask an LGBTQIA+ student to present a lesson on their identity.', impact: { belonging: -8, voice: -6, safety: -11, access: -4 }, heading: 'A student should not be assigned to represent a whole group.', feedback: 'Making a student the class spokesperson can cause unwanted attention and shift the teacher’s responsibility for an inclusive curriculum.', takeaway: 'Teachers should provide inclusive materials without requiring personal disclosure.' },
+    ],
+  },
+  {
+    id: 'overwhelmed', title: 'A student needs a different kind of reset',
+    situation: 'After an unexpected loud drill, a student returns to the library visibly overwhelmed and refuses to join their group. You do not know why they are upset.',
+    question: 'How can you respond without making assumptions about the student?',
+    choices: [
+      { text: 'Offer a calm check-in, an appropriate choice of quiet space or task entry, and a predictable way to rejoin; coordinate support if needed.', impact: { belonging: 12, voice: 9, safety: 15, access: 12 }, heading: 'Predictability and choice can support regulation.', feedback: 'You can respond to observable needs without diagnosing, demanding disclosure, or removing the learning goal. Follow school safety and student-support procedures.', takeaway: 'Offer predictable routines and meaningful choices without demanding personal details.' },
+      { text: 'Tell the student they are disrespectful and must immediately explain their behavior in front of the class.', impact: { belonging: -12, voice: -10, safety: -15, access: -10 }, heading: 'Public confrontation can escalate distress.', feedback: 'The student’s behavior may have many causes. A public explanation is not needed to set a calm boundary and offer a re-entry pathway.', takeaway: 'Respond to needs before escalating a public confrontation.' },
+      { text: 'Excuse the student from every future assignment to avoid any discomfort.', impact: { belonging: -5, voice: -6, safety: 0, access: -14 }, heading: 'Support should preserve access to meaningful learning.', feedback: 'Compassion can coexist with high expectations. Adjust timing, space, or materials while keeping the student connected to the class.', takeaway: 'Pair flexibility with continued access to the core learning goal.' },
+    ],
+  },
+  {
+    id: 'repair_after_correction', title: 'Repair after a difficult moment',
+    situation: 'A student stops participating after you corrected them sharply in front of peers. Later, they avoid eye contact and choose to work alone.',
+    question: 'What could help rebuild trust?',
+    choices: [
+      { text: 'Check in privately, take responsibility for your tone, listen without pressure, and offer a supported way back into the group.', impact: { belonging: 13, voice: 12, safety: 14, access: 9 }, heading: 'Adults can model repair and accountability.', feedback: 'The teacher can acknowledge harm while maintaining the original learning expectations. A private conversation and consistent follow-through matter more than a forced public apology.', takeaway: 'Model repair, listen, and make re-entry possible without lowering expectations.' },
+      { text: 'Assume the student is being defiant and add a consequence without a check-in.', impact: { belonging: -12, voice: -12, safety: -11, access: -9 }, heading: 'A behavior label does not explain what happened.', feedback: 'Discipline that does not consider the relationship or learning barrier can intensify withdrawal. School policies still matter, but so does teacher reflection.', takeaway: 'Examine the interaction before defining a student by a behavior.' },
+      { text: 'Ignore the situation because apologizing would weaken your authority.', impact: { belonging: -10, voice: -9, safety: -9, access: -7 }, heading: 'Authority and accountability can coexist.', feedback: 'Students notice how adults respond when they make mistakes. Repair can support a more predictable and respectful learning community.', takeaway: 'Let students see educators take responsibility and repair harm.' },
+    ],
+  },
+
 ];
 
 
@@ -258,6 +321,9 @@ export const SLOTS = [
   { id: 'lockers', room: 'hallway', label: 'Lockers', key: 'INTERRUPT', x: 36, y: 45, scenarioIds: ['rumor', 'bystander'] },
   { id: 'bookshelf', room: 'library', label: 'Book display', key: 'QUESTION', x: 20, y: 46, scenarioIds: ['books', 'source'] },
   { id: 'table', room: 'library', label: 'Group table', key: 'LISTEN', x: 56, y: 79, scenarioIds: ['quiet_voice', 'accessibility'] },
+  { id: 'math_language', room: 'classroom', label: 'Math & language', key: 'EXPLAIN', x: 24, y: 55, scenarioIds: ['math_home_language', 'math_language_partner'] },
+  { id: 'identity', room: 'library', label: 'Identity & books', key: 'AFFIRM', x: 51, y: 32, scenarioIds: ['pronouns', 'inclusive_books'] },
+  { id: 'support', room: 'library', label: 'Support corner', key: 'REPAIR', x: 80, y: 71, scenarioIds: ['overwhelmed', 'repair_after_correction'] },
 ];
 
 export const TRAVEL = [

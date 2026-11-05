@@ -178,3 +178,75 @@ h1 em, .finish-modal h2 em { color: #8c6dbc; font-weight: 600; }
   .discover-panel { padding: 11px 13px 17px; }
   .hotspot-travel .hotspot-icon { font-size: 15px; }
 }
+
+/* v2.1 — Room imagery, original colors, score tracker, and UI kept intact.
+   The following only relaxes the rhythm and styles new course-content panels. */
+.page-shell { max-width: 1360px; }
+.intro { max-width: 920px; margin: 4px 0 38px; }
+.intro-copy { max-width: 680px; }
+.game-grid { grid-template-columns: minmax(0, 1fr) minmax(278px, 314px); gap: clamp(18px, 2.7vw, 36px); }
+.scene-panel { border-radius: 17px; }
+.sidebar { padding-top: clamp(0px, 1.6vw, 18px); gap: 23px; }
+.sidebar-card { border-radius: 16px; }
+.progress-card { margin-right: 10px; }
+.scores-card { margin-left: 12px; }
+
+/* More breathing room without a new color palette or scrapbook effects. */
+.learning-arc { margin: clamp(48px, 7vw, 94px) 8px 38px; padding-top: 28px; border-top: 1px solid #e7ded7; }
+.arc-intro { max-width: 650px; }
+.arc-intro h2 { font-family: Fraunces, Georgia, serif; font-size: clamp(28px, 3.4vw, 45px); letter-spacing: -1.2px; font-weight: 600; margin: 14px 0 11px; }
+.arc-intro p { font-size: 14px; line-height: 1.7; color: #7b7382; }
+.arc-steps { display: flex; align-items: start; gap: clamp(14px, 3vw, 56px); margin-top: 35px; }
+.arc-step { flex: 1; max-width: 380px; padding: 15px 0 0; border-top: 2px solid #cdb6db; }
+.arc-step:nth-child(2) { margin-top: 28px; border-color: #e0abb8; }
+.arc-step:nth-child(3) { margin-top: 58px; border-color: #98c9bb; }
+.arc-step > span { color: #8a739e; font-size: 10px; font-weight: 800; letter-spacing: 1.4px; }
+.arc-step h3 { font-family: Fraunces, Georgia, serif; font-size: 20px; letter-spacing: -.4px; margin: 10px 0 8px; }
+.arc-step p { font-size: 12px; line-height: 1.65; color: #7b7382; }
+.arc-link, .link-button { color: #75599e; border: 0; background: transparent; padding: 6px 0; text-decoration: underline; text-underline-offset: 3px; font-size: 12px; font-weight: 700; text-align: left; }
+.arc-link { margin-top: 16px; }
+.references-button { white-space: nowrap; }
+
+/* Research is shown after making a decision; keep difficult topics readable. */
+.research-connection { border-top: 1px solid #d9d0e5; margin-top: 17px; padding-top: 14px; }
+.research-connection > summary { color: #745b97; font-size: 12px; font-weight: 800; line-height: 1.5; cursor: pointer; }
+.research-body { margin-top: 13px; padding-left: 2px; }
+.research-body p { font-size: 12px; line-height: 1.75; color: #584e60; }
+.research-body .research-theme { color: #6b5195; font-weight: 800; margin-bottom: 8px; }
+.research-body .research-sources { font-size: 11px; color: #87788d; }
+.references-modal { width: min(740px, calc(100% - 26px)); text-align: left; }
+#referencesContent { padding: 30px clamp(22px, 4vw, 44px) 40px; }
+.references-modal h3 { font-size: 15px; margin: 28px 0 13px; }
+.references-intro { color: #6f6576; font-size: 13px; line-height: 1.7; }
+.reference-subtitle { font-size: 11px; font-weight: 400; color: #988b9e; }
+.apa-list p { font-size: 12px; line-height: 1.65; color: #514856; padding-left: 24px; text-indent: -24px; margin: 0 0 16px; overflow-wrap: anywhere; }
+.apa-list a { text-decoration: underline; text-underline-offset: 2px; color: #75599e; }
+.rubric-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid #eee5e5; }
+.rubric-list li { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; padding: 11px 0; border-bottom: 1px solid #eee5e5; }
+.rubric-list strong { font-size: 12px; color: #4c4054; flex: 0 1 50%; }
+.rubric-list span { color: #8a7d8c; text-align: right; font-size: 11px; line-height: 1.5; }
+
+@media (max-width: 1060px) {
+  .game-grid { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { padding: 0; }
+  .progress-card, .scores-card { margin: 0; }
+}
+@media (max-width: 700px) {
+  .references-button { padding: 8px 10px; font-size: 10px; }
+  .header-right { gap: 7px; }
+  .arc-steps { display: block; }
+  .arc-step, .arc-step:nth-child(2), .arc-step:nth-child(3) { margin: 0 0 24px; max-width: none; }
+  .learning-arc { margin: 50px 3px 27px; }
+  .rubric-list li { display: block; }
+  .rubric-list span { display: block; text-align: left; margin-top: 4px; }
+  .sidebar { gap: 15px; }
+}
+@media (max-width: 420px) {
+  .header-right { flex-wrap: wrap; justify-content: flex-end; }
+  .references-button { order: 2; }
+  .header-tag { display: none; }
+  .site-header { min-height: 80px; }
+  .brand { font-size: 16px; }
+  .hotspot-label { display: none; }
+  .hotspot:focus-visible .hotspot-label { display: block; }
+}

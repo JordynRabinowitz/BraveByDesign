@@ -12,13 +12,13 @@
 <div id="app">
   <header class="site-header">
     <a class="brand" href="./" aria-label="BraveByDesign home"><span class="brand-mark" aria-hidden="true">✳</span><span>Brave<span class="brand-accent">ByDesign</span></span></a>
-    <div class="header-right"><span class="header-tag">THE SCHOOL CHALLENGE</span><button id="resetButton" class="ghost-button" type="button">↻ New playthrough</button></div>
+    <div class="header-right"><span class="header-tag">THE SCHOOL CHALLENGE</span><button id="referencesButton" class="ghost-button references-button" type="button">Course notes &amp; references</button><button id="resetButton" class="ghost-button" type="button">↻ New playthrough</button></div>
   </header>
   <main class="page-shell">
     <div class="intro">
       <p class="eyebrow"><span class="eyebrow-dot"></span> INTERACTIVE TEACHER EXPERIENCE · REPLAYABLE</p>
       <h1>A braver school is<br /><em>built by choices.</em></h1>
-      <p class="intro-copy">Move between the classroom, hallway, and library. Discover seven school moments, decide how you would respond, and collect keys. Each new playthrough brings a different set of situations.</p>
+      <p class="intro-copy">Move between the classroom, hallway, and library. Discover ten school moments, decide how you would respond, and collect keys. Each new playthrough brings a different set of situations.</p>
     </div>
     <div class="game-grid">
       <section class="scene-panel" aria-labelledby="sceneTitle">
@@ -28,21 +28,31 @@
           <img id="sceneImage" class="scene-art" alt="Illustrated classroom" draggable="false" />
           <div id="hotspots"></div>
         </div>
-        <div class="scene-footer"><span><span class="sparkle" aria-hidden="true">✧</span> Click the glowing objects or doors to explore</span><span id="sceneProgressText" aria-live="polite">0 of 7 moments explored</span></div>
+        <div class="scene-footer"><span><span class="sparkle" aria-hidden="true">✧</span> Click the glowing objects or doors to explore</span><span id="sceneProgressText" aria-live="polite">0 of 10 moments explored</span></div>
         <div class="discover-panel"><span class="mini-eyebrow">PLACES TO INVESTIGATE</span><div id="objectList" class="object-list"></div></div>
       </section>
       <aside class="sidebar">
-        <section class="sidebar-card progress-card" aria-labelledby="missionTitle"><span class="mini-eyebrow">02 / YOUR MISSION</span><h2 id="missionTitle">Build a brave school.</h2><p>Seven moments are spread across three spaces. Find a key at each location to unlock the final reflection.</p><div class="keys" id="keyList" aria-label="Your seven keys"></div><div class="progress-track" aria-hidden="true"><span id="missionProgressBar" style="width:0%"></span></div><p id="missionProgressLabel" class="progress-caption" aria-live="polite">0 of 7 keys found</p></section>
+        <section class="sidebar-card progress-card" aria-labelledby="missionTitle"><span class="mini-eyebrow">02 / YOUR MISSION</span><h2 id="missionTitle">Build a brave school.</h2><p>Ten moments are spread across three spaces. Find a key at each location to unlock the final reflection.</p><div class="keys" id="keyList" aria-label="Your ten keys"></div><div class="progress-track" aria-hidden="true"><span id="missionProgressBar" style="width:0%"></span></div><p id="missionProgressLabel" class="progress-caption" aria-live="polite">0 of 10 keys found</p></section>
         <section class="sidebar-card scores-card" aria-labelledby="scoresTitle"><div class="scores-heading"><div><span class="mini-eyebrow">03 / REFLECT</span><h2 id="scoresTitle">Classroom climate</h2></div><span class="info-symbol" title="Illustrative practice scores, not a measurement of real students">i</span></div><div id="scores" class="score-list"></div><p class="fine-print">Scores are conversation starters—not a measure of real student safety, belonging, or teacher skill.</p></section>
         <button id="exitButton" class="exit-button" type="button" disabled>🔒 Unlock the final door <span aria-hidden="true">→</span></button>
       </aside>
     </div>
+    <section class="learning-arc" aria-labelledby="learningArcTitle">
+      <div class="arc-intro"><span class="mini-eyebrow">THE TEACHING PHILOSOPHY</span><h2 id="learningArcTitle">A brave space isn’t built by a poster.</h2><p>It takes everyday classroom design, clear intervention when harm occurs, and meaningful follow-through afterward.</p></div>
+      <div class="arc-steps">
+        <div class="arc-step"><span>01 / BUILD</span><h3>Change the conditions.</h3><p>Notice whose voices, languages, identities, and resources classroom routines support.</p></div>
+        <div class="arc-step"><span>02 / RESPOND</span><h3>Interrupt harm.</h3><p>Name discriminatory behavior, support students, and use appropriate reporting procedures.</p></div>
+        <div class="arc-step"><span>03 / REPAIR</span><h3>Keep showing up.</h3><p>Make space for trust, accountability, accessibility, and reflection long after the moment ends.</p></div>
+      </div>
+      <button class="arc-link" type="button" onclick="document.getElementById('referencesButton').click()">See course readings and rubric connections →</button>
+    </section>
     <div class="bottom-note"><span class="note-icon">✳</span> A fictional practice experience for educators. In real situations, follow school policy, document appropriately, and prioritize student safety.</div>
   </main>
   <footer class="site-footer">BraveByDesign <span>·</span> Notice. Reflect. Respond.</footer>
 </div>
 <dialog id="scenarioDialog" class="modal" aria-labelledby="dialogTitle"><div id="dialogContent"></div></dialog>
 <dialog id="finishDialog" class="modal finish-modal" aria-labelledby="finishTitle"><div id="finishContent"></div></dialog>
+<dialog id="referencesDialog" class="modal references-modal" aria-labelledby="referencesTitle"><div id="referencesContent"></div></dialog>
 <script type="module" src="/src/main.js"></script>
 </body>
 </html>

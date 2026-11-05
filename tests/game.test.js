@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import { METRICS, ROOMS, SCENARIOS, SLOTS } from '../src/scenarios.js';
 import { START_SCORE, TOTAL_MOMENTS, calculateScores, createRun, getProgress, getRoomProgress, scenarioForSlot, validateRun } from '../src/game.js';
 
-test('all 14 scenarios are unique and each slot has two different valid options', () => {
-  assert.equal(SCENARIOS.length, 14);
+test('all 20 scenarios are unique and each slot has two different valid options', () => {
+  assert.equal(SCENARIOS.length, 20);
   assert.equal(new Set(SCENARIOS.map(s => s.id)).size, SCENARIOS.length);
-  assert.equal(SLOTS.length, 7);
+  assert.equal(SLOTS.length, 10);
   assert.equal(ROOMS.length, 3);
   for (const slot of SLOTS) {
     assert.equal(slot.scenarioIds.length, 2);
@@ -23,11 +23,11 @@ test('all 14 scenarios are unique and each slot has two different valid options'
   }
 });
 
-test('new runs have all scene selections, shuffled choices and seven available keys', () => {
+test('new runs have all scene selections, shuffled choices and ten available keys', () => {
   const run = createRun({}, () => 0);
   assert.ok(validateRun(run));
   assert.equal(getProgress(run.answers, run.selections), 0);
-  assert.equal(TOTAL_MOMENTS, 7);
+  assert.equal(TOTAL_MOMENTS, 10);
   for (const slot of SLOTS) {
     assert.ok(scenarioForSlot(slot.id, run.selections));
     assert.deepEqual([...run.orders[slot.id]].sort(), [0, 1, 2]);
@@ -45,10 +45,10 @@ test('replay draws a different scenario at every location', () => {
 test('collecting all keys unlocks reflection with correct room progress', () => {
   const run = createRun({}, () => 0);
   run.answers = Object.fromEntries(SLOTS.map(s => [s.id, 0]));
-  assert.equal(getProgress(run.answers, run.selections), 7);
-  assert.deepEqual(getRoomProgress('classroom', run.answers, run.selections), { completed: 3, total: 3 });
+  assert.equal(getProgress(run.answers, run.selections), 10);
+  assert.deepEqual(getRoomProgress('classroom', run.answers, run.selections), { completed: 4, total: 4 });
   assert.deepEqual(getRoomProgress('hallway', run.answers, run.selections), { completed: 2, total: 2 });
-  assert.deepEqual(getRoomProgress('library', run.answers, run.selections), { completed: 2, total: 2 });
+  assert.deepEqual(getRoomProgress('library', run.answers, run.selections), { completed: 4, total: 4 });
   assert.ok(validateRun(run));
 });
 
@@ -76,4 +76,28 @@ test('invalid or corrupt saves are rejected', () => {
   assert.equal(validateRun({ ...run, currentRoom: 'gym' }), false);
   assert.equal(validateRun({ ...run, orders: { ...run.orders, whiteboard: [0, 0, 0] } }), false);
   assert.equal(validateRun({ ...run, answers: { whiteboard: 99 } }), false);
+});
+
+test('all scenarios have research connections to listed course references', async () => {
+  const { RESEARCH, REFERENCES, RUBRIC_MAP } = await import('../src/research.js');
+  const referenceIds = new Set(REFERENCES.map(r => r.id));
+  assert.equal(RUBRIC_MAP.length, 8);
+  for (const scenario of SCENARIOS) {
+    const lens = RESEARCH[scenario.id];
+    assert.ok(lens, `missing course lens for ${scenario.id}`);
+    assert.ok(lens.analysis && lens.change && lens.refs.length > 0);
+    for (const id of lens.refs) assert.ok(referenceIds.has(id), `unknown APA source: ${id}`);
+  }
+});
+
+test('every replay has linguistic, LGBTQIA+, and trauma-informed situations', () => {
+  const language = new Set(['math_home_language', 'math_language_partner']);
+  const identity = new Set(['pronouns', 'inclusive_books']);
+  const healing = new Set(['overwhelmed', 'repair_after_correction']);
+  for (let i = 0; i < 20; i += 1) {
+    const run = createRun();
+    assert.ok(language.has(run.selections.math_language));
+    assert.ok(identity.has(run.selections.identity));
+    assert.ok(healing.has(run.selections.support));
+  }
 });
