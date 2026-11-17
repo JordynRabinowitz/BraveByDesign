@@ -16,6 +16,6 @@ An illustrated 2D, point-and-click classroom-climate game for educators. Navigat
 
 ## Important teaching and academic notes
 
-The scenarios are fictional. Always follow local reporting, safeguarding, anti-discrimination, privacy, and discipline procedures. Do not use game scores to assess real students or real teaching quality. The references and course connections were drafted from the **EDUC 347 syllabus** and are original applications, not quotations or definitive summaries of the full texts; verify them against the readings and course discussions. An AI development acknowledgment is included in the references dialog; use the format your instructor requires.
+The scenarios are fictional. Always follow local reporting, safeguarding, anti-discrimination, privacy, and discipline procedures. Do not use game scores to assess real students or real teaching quality. The references and course connections were drafted from the **EDUC 347 syllabus** and are original applications, not quotations or definitive summaries of the full texts. An AI development acknowledgment is included in the references dialog.
 
 See `CODESPACES_UPDATE.md` for upload instructions.
